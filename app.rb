@@ -30,6 +30,7 @@ module FormsLab
     end
 
     get 'pirates/new' do
+      binding.pry
       erb :'pirates/new'
     end
 
