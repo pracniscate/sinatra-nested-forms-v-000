@@ -44,8 +44,10 @@ module FormsLab
       params[:pirate][:ships].each do |ship_data|
         ship = Ship.new(ship_data)
         ship.pirate = pirate
-        ship.save 
+        ship.save
       end
+
+      redirect to '/pirates/#{pirate.id}'
     end
   end
 end
