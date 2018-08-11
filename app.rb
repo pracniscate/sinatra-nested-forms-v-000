@@ -24,14 +24,12 @@ module FormsLab
     # end
 
     get '/pirates' do
-      binding.pry
       @pirates = Pirate.all # data structure: array
 
       erb :'pirates/index'
     end
 
     get 'pirates/new' do
-      binding.pry
       erb :'pirates/new'
     end
 
@@ -39,6 +37,15 @@ module FormsLab
       @pirate = Pirate.find(params[:id])
 
       erb :'pirates/show'
+    end
+
+    post '/pirates' do
+      pirate = Pirate.new(name: params[:pirate][:name], height: params[:pirate][:height], weight: params[:pirate][:weight])
+      params[:pirate][:ships].each do |ship_data|
+        ship = Ship.new(ship_data)
+        ship.pirate = pirate
+        ship.save 
+      end
     end
   end
 end
