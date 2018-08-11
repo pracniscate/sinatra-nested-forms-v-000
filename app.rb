@@ -24,6 +24,7 @@ module FormsLab
     # end
 
     get '/pirates' do
+      binding.pry
       @pirates = Pirate.all # data structure: array
 
       erb :'pirates/index'
@@ -38,10 +39,6 @@ module FormsLab
       @pirate = Pirate.find(params[:id])
 
       erb :'pirates/show'
-    end
-
-    post '/pirates' do
-      binding.pry
     end
   end
 end
