@@ -38,5 +38,9 @@ module FormsLab
 
       erb :'pirates/show'
     end
+
+    post '/pirates' do
+      binding.pry
+    end
   end
 end
