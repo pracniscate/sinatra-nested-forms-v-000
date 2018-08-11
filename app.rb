@@ -34,7 +34,7 @@ module FormsLab
     end
 
     get '/pirates/:id' do # dynamic segment
-      @pirate = Pirate.find(params["id"])
+      @pirate = Pirate.find(params[:id])
 
       erb :'pirates/show'
     end
