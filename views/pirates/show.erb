@@ -13,12 +13,19 @@
     </div>
 
     <h1>Ships</h1>
-    <% @ships.each do |ship| %>
+    <ul>
+      <% @pirate.ships.each do |ship| %>
+        <li>Name: <%= ship.name %></li>
+        <li>Category: <%= ship.category %></li>
+        <li>Booty: <%= ship.booty %></li>
+      <% end  %>
+    </ul>
+    <!-- <% @ships.each do |ship| %>
       <div class="ships">
         <p>Name: <%= ship.name %></p><br>
         <p>Type: <%= ship.type %></p><br>
         <p>Booty: <%= ship.booty %></p><br>
       </div>
-    <% end %>
+    <% end %> -->
   </body>
 </html>
