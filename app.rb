@@ -29,6 +29,10 @@ module FormsLab
       erb :'pirates/index'
     end
 
+    get 'pirates/new' do
+      erb :'pirates/new'
+    end
+    
     get '/pirates/:id' do # dynamic segment
       @pirate = Pirate.find(params["id"])
 
